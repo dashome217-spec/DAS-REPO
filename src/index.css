@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-accent-orange: #f97316; /* Tailwind orange-500 */
+  --color-stone: #f5f5f4; /* Tailwind stone-100 equivalent */
+  --color-neutral-muted: #9ca3af; /* Tailwind neutral-400 */
+}
+
+:root {
+  --bg-app: #f5f5f4;
+  --text-main: #171717;
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-stone text-neutral-900 overflow-hidden font-sans antialiased;
+  }
+}
+
+.label-micro {
+  @apply text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-muted;
+}
+
+.minimal-card {
+  @apply bg-white border border-neutral-200 rounded-3xl shadow-sm;
+}
+
+.glass-panel-light {
+  @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-lg;
+}
+
+/* For mobile devices, hide scrollbars but keep scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.indicator-dot {
+  @apply w-1.5 h-1.5 bg-accent-orange rounded-full;
+}
+
